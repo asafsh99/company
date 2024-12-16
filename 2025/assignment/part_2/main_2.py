@@ -25,7 +25,7 @@ def get_company_data():
         elif row[0] == 'Salesperson':
             manage.employees.append(
                 sales.Salesperson(row[1], row[2], row[3], ad.Address(row[4], row[5], row[6]), row[7],
-                                  row[8], row[9], int(row[10]), row[11], int(row[12])))
+                                  row[8], row[9], int(row[10]), int(row[11]), int(row[12])))
     return manage
 
 
@@ -118,12 +118,15 @@ def add_sales(manage):
     employee_id = input("enter salesperson id: ")
     amount = int(input("enter amount of sales: "))
     salesperson = manage[employee_id]
-    salesperson + amount
-    print(f"updated salesperson: {salesperson}")
+    update_sel = salesperson + amount
+    print(f"updated salesperson: {update_sel}")
 
 
 def get_sales_target(manage):
-    pass
+    employee_id = input("enter salespersom id: ")
+    salesperson = manage[employee_id]
+    update_sel = salesperson % 100
+    print(f"The salesperson has {update_sel}% compliance with the sales target. ")
 
 
 def exit_menu(manage):
