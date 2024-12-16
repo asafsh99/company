@@ -37,7 +37,7 @@ def save_company_data(manage):
         writer.writerow(manage.to_csv())
 
         writer.writerow(["department", "id", "firstname", "lastname", "address",
-                         "phone_number", "gender", "salary", "seniority","param1","param2"])
+                         "phone_number", "gender", "salary", "seniority", "param1", "param2"])
 
         for employee in manage.employees:
             writer.writerow(employee.to_csv())
@@ -94,13 +94,16 @@ def add_programming_language(manage):
     employee_id = input("Insert developer ID: ")
     developer = manage[employee_id]
     language = input("Insert programming language to add: ")
-    developer + language
-    print(f"Updated developer: {developer}")
-
+    update_dev = developer + language
+    print(f"Updated developer: {update_dev}")
 
 
 def remove_programming_language(manage):
-    pass
+    employee_id = input("Insert developer ID: ")
+    developer = manage[employee_id]
+    language = input("Insert programming language to remove: ")
+    update_dev = developer + language
+    print(f"Updated developer: {update_dev}")
 
 
 def compare_developers(manage):
@@ -147,7 +150,7 @@ def main():
     menu = Menu(menu_options)
     while True:
         menu.show()
-        print(sales.Salesperson.sales_counter)
+
 
 
 if __name__ == '__main__':

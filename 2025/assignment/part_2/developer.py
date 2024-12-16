@@ -16,12 +16,12 @@ class Developer(e.Employee):
     def __add__(self, language):
         if language not in self.__programming_languages:
             self.__programming_languages.append(language)
-        return self
+        return self.__programming_languages
 
     def __sub__(self, language):
         if language in self.__programming_languages and len(self.__programming_languages):
             self.__programming_languages.remove(language)
-        return self
+        return self.__programming_languages
 
     def __lt__(self, other):
         return len(self.__programming_languages) < len(other.__programming_languages)
