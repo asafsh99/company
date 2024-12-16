@@ -9,15 +9,12 @@ class Salesperson(e.Employee):
         super().__init__(e_id, firstname, lastname, address, phone_number, gender, salary, seniority)
         self.__sales_target = sales_target
         self.__current_sales = current_sales if current_sales > 0 else 0
-        # self.__sales = Salesperson.sales_counter
         Salesperson.sales_counter += self.__current_sales
 
-    def __add__(self, other):
-        self.__current_sales += other
-        Salesperson.sales_counter +=other
+    def __add__(self, amount):
+        self.__current_sales += amount
+        Salesperson.sales_counter += amount
         return self
-
-
 
 
     def __str__(self):

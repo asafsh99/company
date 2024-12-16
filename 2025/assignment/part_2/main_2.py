@@ -112,7 +112,11 @@ def compare_salesperson(manage):
 
 
 def add_sales(manage):
-    pass
+    employee_id = input("enter salesperson id: ")
+    amount = int(input("enter amount of sales: "))
+    salesperson = manage[employee_id]
+    salesperson + amount
+    print(f"updated salesperson: {salesperson}")
 
 
 def get_sales_target(manage):
@@ -143,7 +147,7 @@ def main():
     menu = Menu(menu_options)
     while True:
         menu.show()
-        # print(sales.Salesperson.sales_counter)
+        print(sales.Salesperson.sales_counter)
 
 
 if __name__ == '__main__':
