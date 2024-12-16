@@ -5,7 +5,7 @@ class Salesperson(e.Employee):
     sales_counter = 0
 
     def __init__(self,e_id, firstname, lastname, address, phone_number, gender, salary, seniority,
-                 sales_target,current_sales=0):
+                 sales_target:int,current_sales=0):
         super().__init__(e_id, firstname, lastname, address, phone_number, gender, salary, seniority)
         self.__sales_target = sales_target
         self.__current_sales = current_sales if current_sales > 0 else 0
@@ -15,6 +15,9 @@ class Salesperson(e.Employee):
         self.__current_sales += amount
         Salesperson.sales_counter += amount
         return self
+
+    def __mod__(self, div):
+        return (self.__current_sales / self.__sales_target)*div
 
 
     def __str__(self):
