@@ -95,19 +95,31 @@ def add_programming_language(manage):
     developer = manage[employee_id]
     language = input("Insert programming language to add: ")
     update_dev = developer + language
-    print(f"Updated developer: {update_dev}")
+    if update_dev :
+        print(f"Updated developer language: {update_dev}")
+    else:
+        print('somothing went wrong')
 
 
 def remove_programming_language(manage):
     employee_id = input("Insert developer ID: ")
     developer = manage[employee_id]
     language = input("Insert programming language to remove: ")
-    update_dev = developer + language
-    print(f"Updated developer: {update_dev}")
+    update_dev = developer - language
+    if update_dev:
+        print(f"Updated developer language: {update_dev}")
+    else:
+        print('somtihing went wrong')
 
 
 def compare_developers(manage):
-    pass
+    employee_id_1 = input("Insert developer 1 ID: ")
+    developer1 = manage[employee_id_1]
+    employee_id_2 = input("Insert developer 2 ID: ")
+    developer2 = manage[employee_id_2]
+#אם אני מעביר תז לא של מפתח האופרטור < לא יודע לתמוך בזה, למה אני עודה isinstance?
+    know_more = developer1 > developer2
+    print(f'{know_more[0]} developer has more programming language than {know_more[1]} developer')
 
 
 def compare_salesperson(manage):
