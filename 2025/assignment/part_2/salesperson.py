@@ -19,6 +19,12 @@ class Salesperson(e.Employee):
     def __mod__(self, div):
         return (self.__current_sales / self.__sales_target)*div
 
+    def __lt__(self, other):
+        if isinstance(self,Salesperson) and isinstance(other, Salesperson):
+            if int(self.__current_sales) < int(other.__current_sales):
+                return "first", "second"
+            return "second", "first"
+        return False
 
     def __str__(self):
         return f'{super().__str__()},{self.__sales_target},{self.__current_sales}'

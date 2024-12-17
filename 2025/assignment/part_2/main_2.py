@@ -123,7 +123,13 @@ def compare_developers(manage):
 
 
 def compare_salesperson(manage):
-    pass
+    employee_id_1 = input("Insert developer 1 ID: ")
+    salesperson1 = manage[employee_id_1]
+    employee_id_2 = input("Insert developer 2 ID: ")
+    salesperson2 = manage[employee_id_2]
+    # אם אני מעביר תז לא של מפתח האופרטור < לא יודע לתמוך בזה, למה אני עודה isinstance?
+    have_more = salesperson1 > salesperson2
+    print(f'{have_more[0]} salesperson has more sales than {have_more[1]} salesperson')
 
 
 def add_sales(manage):

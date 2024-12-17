@@ -1,7 +1,7 @@
 name,street,number,city
 OOP Course Company,Hadar,208,tel-Aviv
 department,id,firstname,lastname,address,phone_number,gender,salary,seniority,param1,param2
-Developer,111234567,Yosi,Lev,shalom,41/4,Tel-Avive,054-6369912,M,18500,3,Java;Python,6
-Developer,123456777,Ronit,Tzur,Golda,10/4,Haifa,053-1234567,F,22500,6,Go;Java;Python,4
-Salesperson,123456789,Yael,Revivo,Herzel,1/2,Ramat-gan,050-3696912,F,21000,10,38,20
-Salesperson,111222333,Taly,Bar,David,1/2,Hadera,055-1236912,F,16000,3,30,12
+Developer,1,Yosi,Lev,shalom,41/4,Tel-Avive,054-6369912,M,18500,3,Java;Python,6
+Developer,2,Ronit,Tzur,Golda,10/4,Haifa,053-1234567,F,22500,6,Go;Java;Python,4
+Salesperson,3,Yael,Revivo,Herzel,1/2,Ramat-gan,050-3696912,F,21000,10,38,20
+Salesperson,4,Taly,Bar,David,1/2,Hadera,055-1236912,F,16000,3,30,12

@@ -20,16 +20,17 @@ class Developer(e.Employee):
         return False
 
     def __sub__(self, language):
-        if isinstance(language,str) and language in self.__programming_languages and len(self.__programming_languages):
+        if isinstance(language, str) and language in self.__programming_languages and len(self.__programming_languages):
             self.__programming_languages.remove(language)
             return self.__programming_languages
         return False
 
     def __lt__(self, other):
-        if isinstance(self, Developer) and isinstance(other,Developer) :
+        if isinstance(self, Developer) and isinstance(other, Developer):
             if len(self.__programming_languages) < len(other.__programming_languages):
-                return "first" , "second"
-            return "second" , "first"
+                return "first", "second"
+            return "second", "first"
         return False
+
     def to_csv(self):
         return super().to_csv() + [self.__programming_languages, self.__experience_years]
