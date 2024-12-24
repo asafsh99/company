@@ -20,11 +20,12 @@ class Salesperson(e.Employee):
         return (self.__current_sales / self.__sales_target)*div
 
     def __lt__(self, other):
-        if isinstance(self,Salesperson) and isinstance(other, Salesperson):
-            if int(self.__current_sales) < int(other.__current_sales):
-                return "first", "second"
-            return "second", "first"
-        return False
+        if int(self.__current_sales) == int(other.__current_sales):
+            return print(f'same amount of sales')
+        elif int(self.__current_sales) < int(other.__current_sales):
+            return print(f'first salesperson has more programming language than second salesperson')
+        return print(f'second salesperson has more programming language than first salesperson')
+
 
     def __str__(self):
         return f'{super().__str__()},{self.__sales_target},{self.__current_sales}'
