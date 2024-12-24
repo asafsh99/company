@@ -17,7 +17,8 @@ class Salesperson(e.Employee):
         return self
 
     def __mod__(self, div):
-        return (self.__current_sales / self.__sales_target)*div
+        number = (self.__current_sales / self.__sales_target) * 100
+        return print(f'{round(number,2)}%')
 
     def __lt__(self, other):
         if int(self.__current_sales) == int(other.__current_sales):

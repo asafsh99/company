@@ -146,8 +146,12 @@ def add_sales(manage):
 def get_sales_target(manage):
     employee_id = input("enter salespersom id: ")
     salesperson = manage[employee_id]
-    update_sel = salesperson % 100
-    print(f"The salesperson has {update_sel}% compliance with the sales target. ")
+    if isinstance(salesperson, sales.Salesperson):
+        salesperson % 100
+    else:
+        print('the provided id do not belong to a salesperson')
+
+    # print(f"The salesperson has {update_sel}% compliance with the sales target. ")
 
 
 def exit_menu(manage):
