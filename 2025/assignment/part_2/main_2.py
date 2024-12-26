@@ -94,11 +94,14 @@ def add_programming_language(manage):
     employee_id = input("Insert developer ID: ")
     developer = manage[employee_id]
     language = input("Insert programming language to add: ")
-    update_dev = developer + language
-    if update_dev :
-        print(f"Updated developer language: {update_dev}")
+    if isinstance(developer,dev.Developer):
+        update_dev = developer + language
+        if update_dev:
+            print(f"Updated developer language: {update_dev}")
+        else:
+            print('there is a problam with the language')
     else:
-        print('somothing went wrong')
+        print('the provided id not belong to developer')
 
 
 def remove_programming_language(manage):
@@ -109,7 +112,7 @@ def remove_programming_language(manage):
     if update_dev:
         print(f"Updated developer language: {update_dev}")
     else:
-        print('somtihing went wrong')
+        print('not found developer with this id')
 
 
 def compare_developers(manage):
@@ -137,10 +140,16 @@ def compare_salesperson(manage):
 
 def add_sales(manage):
     employee_id = input("enter salesperson id: ")
-    amount = int(input("enter amount of sales: "))
+    amount = input("enter amount of sales: ")
     salesperson = manage[employee_id]
-    update_sel = salesperson + amount
-    print(f"updated salesperson: {update_sel}")
+    if isinstance(salesperson, sales.Salesperson):
+        update_sel = salesperson + amount
+        if update_sel:
+            print(f"updated salesperson: {update_sel}")
+        else:
+            print('must enter valid amount')
+    else:
+        print('the provided id not belong to salesperson')
 
 
 def get_sales_target(manage):
@@ -150,8 +159,6 @@ def get_sales_target(manage):
         salesperson % 100
     else:
         print('the provided id do not belong to a salesperson')
-
-    # print(f"The salesperson has {update_sel}% compliance with the sales target. ")
 
 
 def exit_menu(manage):
@@ -178,7 +185,6 @@ def main():
     menu = Menu(menu_options)
     while True:
         menu.show()
-
 
 
 if __name__ == '__main__':

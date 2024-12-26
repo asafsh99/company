@@ -17,7 +17,7 @@ class Developer(e.Employee):
         if isinstance(language, str) and language not in self.__programming_languages:
             self.__programming_languages.append(language)
             return self.__programming_languages
-        return False
+
 
     def __sub__(self, language):
         if isinstance(language, str) and language in self.__programming_languages and len(self.__programming_languages):

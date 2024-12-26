@@ -12,9 +12,10 @@ class Salesperson(e.Employee):
         Salesperson.sales_counter += self.__current_sales
 
     def __add__(self, amount):
-        self.__current_sales += amount
-        Salesperson.sales_counter += amount
-        return self
+        if isinstance(amount,int):
+            self.__current_sales += amount
+            Salesperson.sales_counter += amount
+            return self
 
     def __mod__(self, div):
         number = (self.__current_sales / self.__sales_target) * 100
