@@ -1,8 +1,11 @@
+from data_utils import validate_address_street, validate_address_city, validate_address_number
+
+
 class Address:
-    def __init__(self, street, number, city):
-        self.__street = street
-        self.__number = str(number)
-        self.__city = city
+    def __init__(self, street: str, number, city: str):
+        self.__street = validate_address_street(street)
+        self.__number = validate_address_number(number)
+        self.__city = validate_address_city(city)
 
     def __str__(self):
         return f'{self.__street},{self.__number},{self.__city}'
@@ -20,4 +23,4 @@ class Address:
         return hash((self.__street, self.__number, self.__city))
 
     def to_csv(self):
-        return [self.__street,self.__number,self.__city]
+        return [self.__street, self.__number, self.__city]

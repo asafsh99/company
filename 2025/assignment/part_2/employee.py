@@ -1,12 +1,12 @@
 import person as p
-
+from data_utils import validate_seniority,validate_salary
 
 class Employee(p.Person):
-    def __init__(self, e_id: int, firstname: str, lastname: str, address, phone_number: int, gender: str, salary: int,
-                 seniority: int):
+    def __init__(self, e_id, firstname, lastname, address, phone_number, gender, salary,
+                 seniority):
         super().__init__(e_id, firstname, lastname, address, phone_number, gender)
-        self.__salary = salary
-        self.__seniority = seniority
+        self.__salary = validate_salary(salary)
+        self.__seniority = validate_seniority(seniority)
 
     def __str__(self):
         return f'{super().__str__()},{self.__salary},{self.__seniority}'

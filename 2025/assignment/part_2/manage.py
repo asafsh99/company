@@ -1,5 +1,4 @@
 
-
 class Manage:
     def __init__(self, company_name, address, employees=None):
         self.__company_name = company_name

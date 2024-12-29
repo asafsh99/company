@@ -1,11 +1,8 @@
 import csv
 import address as ad
 import manage as ma
-import employee as emp
-import data_utils as du
 import developer as dev
 from menu_2 import Menu
-import person as p
 import salesperson as sales
 
 
@@ -20,12 +17,12 @@ def get_company_data():
     for row in reader:
         if row[0] == 'Developer':
             manage.employees.append(dev.Developer(row[1], row[2], row[3], ad.Address(row[4], row[5], row[6]), row[7],
-                                                  row[8], row[9], int(row[10]), row[11], int(row[12])))
+                                                  row[8], row[9], row[10], row[11], int(row[12])))
 
         elif row[0] == 'Salesperson':
             manage.employees.append(
                 sales.Salesperson(row[1], row[2], row[3], ad.Address(row[4], row[5], row[6]), row[7],
-                                  row[8], row[9], int(row[10]), int(row[11]), int(row[12])))
+                                  row[8], row[9], row[10], int(row[11]), int(row[12])))
     return manage
 
 
@@ -60,9 +57,7 @@ def add_new_employee(manage):
     city = input("Enter the city: ")
     employee_address = ad.Address(street, number, city)
     phone_number = input("Enter the phone number (format: 05x-1234567):")
-    phone_number = du.validate_phone_number(phone_number)
     gender = input("Enter the gender (M/F): ")
-    gender = du.validate_gender(gender)
     salary = input("enter salary: ")
     seniority = input("enter seniority: ")
     department = input("Insert type of employee, d for Developer and s for Salesperson: ")
@@ -94,12 +89,12 @@ def add_programming_language(manage):
     employee_id = input("Insert developer ID: ")
     developer = manage[employee_id]
     language = input("Insert programming language to add: ")
-    if isinstance(developer,dev.Developer):
+    if isinstance(developer, dev.Developer):
         update_dev = developer + language
         if update_dev:
             print(f"Updated developer language: {update_dev}")
         else:
-            print('there is a problam with the language')
+            print('there is a problem with the language')
     else:
         print('the provided id not belong to developer')
 
@@ -112,7 +107,7 @@ def remove_programming_language(manage):
     if update_dev:
         print(f"Updated developer language: {update_dev}")
     else:
-        print('not found developer with this id')
+        print('the id not found or left only one programming language')
 
 
 def compare_developers(manage):
@@ -140,12 +135,12 @@ def compare_salesperson(manage):
 
 def add_sales(manage):
     employee_id = input("enter salesperson id: ")
-    amount = input("enter amount of sales: ")
+    amount = int(input("enter amount of sales: "))
     salesperson = manage[employee_id]
     if isinstance(salesperson, sales.Salesperson):
         update_sel = salesperson + amount
         if update_sel:
-            print(f"updated salesperson: {update_sel}")
+            print(f"updated salesperson sales: {update_sel}")
         else:
             print('must enter valid amount')
     else:
@@ -153,7 +148,7 @@ def add_sales(manage):
 
 
 def get_sales_target(manage):
-    employee_id = input("enter salespersom id: ")
+    employee_id = input("enter salesperson id: ")
     salesperson = manage[employee_id]
     if isinstance(salesperson, sales.Salesperson):
         salesperson % 100

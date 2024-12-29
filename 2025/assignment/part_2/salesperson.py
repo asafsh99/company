@@ -15,7 +15,7 @@ class Salesperson(e.Employee):
         if isinstance(amount,int):
             self.__current_sales += amount
             Salesperson.sales_counter += amount
-            return self
+            return self.__current_sales
 
     def __mod__(self, div):
         number = (self.__current_sales / self.__sales_target) * 100
