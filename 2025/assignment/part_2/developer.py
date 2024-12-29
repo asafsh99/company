@@ -19,17 +19,18 @@ class Developer(e.Employee):
             return self.__programming_languages
 
     def __sub__(self, language):
-        if isinstance(language, str) and language in self.__programming_languages and len(self.__programming_languages)>1:
+        if isinstance(language, str) and language in self.__programming_languages and len(
+                self.__programming_languages) > 1:
             self.__programming_languages.remove(language)
             return self.__programming_languages
         return False
 
     def __lt__(self, other):
         if len(self.__programming_languages) == len(other.__programming_languages):
-            return print('same number of programming language')
+            return 'same number of programming language'
         elif len(self.__programming_languages) < len(other.__programming_languages):
-            return print(f'first developer has more programming language than second developer')
-        return print(f'second developer has more programming language than firsr developer')
+            return f'first developer has more programming language than second developer'
+        return f'second developer has more programming language than first developer'
 
     def to_csv(self):
         return super().to_csv() + [self.__programming_languages, self.__experience_years]

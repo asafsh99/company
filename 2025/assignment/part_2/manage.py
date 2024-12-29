@@ -1,4 +1,3 @@
-
 class Manage:
     def __init__(self, company_name, address, employees=None):
         self.__company_name = company_name
@@ -24,8 +23,6 @@ class Manage:
                 return True
         return False
 
-
-
     def print_employees(self):
         print("Employees:")
         for emp in self.employees:
@@ -36,7 +33,6 @@ class Manage:
             if employee.id == employee_id:
                 return employee
         return None
-
 
     def to_csv(self):
         return [self.__company_name] + self._address.to_csv()

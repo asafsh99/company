@@ -66,7 +66,7 @@ def add_new_employee(manage):
         experience_years = int(input('insert experience years: '))
         new_employee = dev.Developer(employee_id, firstname, lastname, employee_address, phone_number, gender,
                                      salary, seniority, programming_languages, experience_years)
-    elif department == "s":
+    else:
         sales_target = input('enter sales target for this year: ')
         new_employee = sales.Salesperson(employee_id, firstname, lastname, employee_address, phone_number, gender,
                                          salary, seniority, sales_target)
@@ -117,7 +117,8 @@ def compare_developers(manage):
     developer2 = manage[employee_id_2]
 
     if isinstance(developer1, dev.Developer) and isinstance(developer2, dev.Developer):
-        developer1 > developer2
+        result = developer1 > developer2
+        print(result)
     else:
         print("One or both of the provided IDs do not belong to a Developer")
 
@@ -128,7 +129,8 @@ def compare_salesperson(manage):
     employee_id_2 = input("Insert developer 2 ID: ")
     salesperson2 = manage[employee_id_2]
     if isinstance(salesperson1, sales.Salesperson) and isinstance(salesperson2, sales.Salesperson):
-        salesperson1 > salesperson2
+        result = salesperson1 > salesperson2
+        print(result)
     else:
         print("One or both of the provided IDs do not belong to a salesperson")
 

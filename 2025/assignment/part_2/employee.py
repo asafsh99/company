@@ -1,5 +1,6 @@
 import person as p
-from data_utils import validate_seniority,validate_salary
+from data_utils import validate_seniority, validate_salary
+
 
 class Employee(p.Person):
     def __init__(self, e_id, firstname, lastname, address, phone_number, gender, salary,

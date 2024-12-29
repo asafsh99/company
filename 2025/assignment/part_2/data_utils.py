@@ -15,12 +15,14 @@ def validate_gender(gender):
     if gender in ['F', 'M']:
         return gender
 
+
 # check id
 def validate_id(e_id):
     if not e_id.isdigit() or len(e_id) != 9:
         return
     else:
         return e_id
+
 
 # check first name
 def validate_first_name(firs_name):
@@ -29,12 +31,14 @@ def validate_first_name(firs_name):
     else:
         return firs_name
 
+
 # check last name
 def validate_last_name(last_name):
     if not last_name.isalpha():
         return
     else:
         return last_name
+
 
 # check address
 def validate_address_street(street):
@@ -43,16 +47,18 @@ def validate_address_street(street):
     else:
         return street
 
+
 # check address
 def validate_address_city(city):
-    if not city.replace("-","").isalpha() :
+    if not city.replace("-", "").isalpha():
         return
     else:
         return city
 
-#check address
+
+# check address
 def validate_address_number(number):
-    if not number.replace("/","1").isdigit() :
+    if not number.replace("/", "1").isdigit():
         return
     else:
         return number
